@@ -27,6 +27,7 @@ git checkout -b Pablo_C
 mkdir javascript
 touch mijava.js
 git commit -m "Añadido el script básico en mijava.js"
+git commit -m "Añadida a funcionalidad de cambio de color y el contador de clics"
 git push origin Pablo_C
 
 Problemas encontrados y Soluciones
