@@ -19,6 +19,35 @@ Mi archivo contiene un codigo que muestra un mensaje en la consola del navegador
 El código es el siguiente:
 document.addEventListener("DOMContentLoaded", () => {
     console.log("¡Hola, este es un mensaje desde mijava.js!");
+    const mensaje = document.createElement("h2");
+    mensaje.textContent = "¡Bienvenido a nuestro proyecto colaborativo!";
+    mensaje.style.textAlign = "center";
+    document.body.prepend(mensaje);
+
+    const botonColor = document.createElement("button");
+    botonColor.textContent = "Cambiar color de fondo";
+    botonColor.style.display = "block";
+    botonColor.style.margin = "20px auto";
+    botonColor.style.padding = "10px";
+    botonColor.style.cursor = "pointer";
+    document.body.appendChild(botonColor);
+
+    botonColor.addEventListener("click", () => {
+        const colores = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"];
+        const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+        document.body.style.backgroundColor = colorAleatorio;
+    });
+
+    let contador = 0;
+    const contadorTexto = document.createElement("p");
+    contadorTexto.textContent = `Has hecho clic ${contador} veces`;
+    contadorTexto.style.textAlign = "center";
+    document.body.appendChild(contadorTexto);
+
+    botonColor.addEventListener("click", () => {
+        contador++;
+        contadorTexto.textContent = `Has hecho clic ${contador} veces`;
+    });
 });
 
 Comandos de Git utilizados:
