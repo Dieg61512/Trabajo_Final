@@ -1,0 +1,66 @@
+- PROYECTO COLABORATIVO WEB - GIT Y GITHUB
+Es una pagina web sencilla que incluye los archivos HTML, CSS y JavaScript, hemos aplicado lo que sabemos de Git y GitHub en un entorno colaborativo.
+
+- Nombre: Pablo Calzada
+- Rol: Desarrollar la parte de JavaScript
+
+- Estructura del proyecto:
+/Proyecto-Colaborativo
+│── html
+|   └── index.html
+│── /css
+│   └── estilos.css
+│── /javascript
+│   └── mijava.js
+│── README.md
+
+- Funcionalidad de mi código:
+Mi archivo contiene un codigo que muestra un mensaje en la consola del navegador cuando la página se ha cargado completamente.
+El código es el siguiente:
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("¡Hola, este es un mensaje desde mijava.js!");
+    const mensaje = document.createElement("h2");
+    mensaje.textContent = "¡Bienvenido a nuestro proyecto colaborativo!";
+    mensaje.style.textAlign = "center";
+    document.body.prepend(mensaje);
+
+    const botonColor = document.createElement("button");
+    botonColor.textContent = "Cambiar color de fondo";
+    botonColor.style.display = "block";
+    botonColor.style.margin = "20px auto";
+    botonColor.style.padding = "10px";
+    botonColor.style.cursor = "pointer";
+    document.body.appendChild(botonColor);
+
+    botonColor.addEventListener("click", () => {
+        const colores = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"];
+        const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+        document.body.style.backgroundColor = colorAleatorio;
+    });
+
+    let contador = 0;
+    const contadorTexto = document.createElement("p");
+    contadorTexto.textContent = `Has hecho clic ${contador} veces`;
+    contadorTexto.style.textAlign = "center";
+    document.body.appendChild(contadorTexto);
+
+    botonColor.addEventListener("click", () => {
+        contador++;
+        contadorTexto.textContent = `Has hecho clic ${contador} veces`;
+    });
+});
+
+Comandos de Git utilizados:
+git clone https://github.com/Dieg61512/Trabajo_Final.git
+git checkout -b Pablo_C
+mkdir javascript
+touch mijava.js
+git commit -m "Añadido el script básico en mijava.js"
+git commit -m "Añadida a funcionalidad de cambio de color y el contador de clics"
+git push origin Pablo_C
+
+Problemas encontrados y Soluciones
+Uno de los problemas que me ha dado es que no se ejecutaba porque el archivo JavaScript no estaba vinculado con el index.html, lo solucionamos
+agregando la línea <script src="javascript/mijava.js"></script>.
+Y el último problema que me ha dado es el comando git push porque la rama no existía y la solución fue utilizar el comando 
+git push --set-upstream origin Pablo_C.
